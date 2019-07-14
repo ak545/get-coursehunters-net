@@ -22,15 +22,16 @@
 Для работы скрипта необходим **Python версии 3.6 или выше**.
 Разумеется, необходимо сперва установить сам [Python](https://www.python.org/). В Linux он обычно уже установлен. Если нет, установите его, например:
 
+---
+**Для Linux:**
 ```console
 foo@bar:~$ sudo yum install python3
 foo@bar:~$ sudo dnf install python3
 foo@bar:~$ sudo apt install python3
 foo@bar:~$ sudo pacman -S python
 ```
-
-Для Apple macOS:
-
+---
+**Для Apple macOS:**
 ```console 
 foo@bar:~$ xcode-select --install
 ```
@@ -50,7 +51,12 @@ foo@bar:~$ brew install python
 
 Примечание: [brew](https://brew.sh/index_ru)
 
+---
+**Для Microsoft Windows:**
+
 Для Microsoft Windows скачайте [дистрибутив](https://www.python.org/downloads/windows/) и установите его. Я рекомендую скачивать **"Download Windows x86 web-based installer"** если у вас 32-х битная ОС и **"Download Windows x86-64 web-based installer"** если у вас 64-х битная ОС. Во время установки рекомендую отметить все опции (Documentation, pip, tcl/tk and IDLE, Python test suit, py launcher, for all users (requeres elevation)).
+
+---
 
 Предварительно, возможно понадобится обновить сам **pip** (установщик модулей Python):
 
@@ -163,8 +169,24 @@ URL курса
 
 **-o DIR, --out DIR**
 
-Папка для загрузки курса (название и язык курса указывать не надо!)
-> Если параметр не задан, загрузка происходит в текущую папку!
+Папка для загрузки курса (название курса и язык курса указывать не надо!)
+> Если параметр не задан, загрузка происходит в текущую папку ( **[os.getcwd](https://www.tutorialspoint.com/python3/os_getcwd.htm)** )!
+> ```python
+> 
+>     if NAMESPACE.out:
+>         # Если параметр задан
+>         # Создание папки для сохранения видео и материалов курса
+>         try:
+>             Path(NAMESPACE.out).mkdir(parents=True, exist_ok=True)
+>         except:
+>             print(f'Ошибка создания папки:\n{FLY}{NAMESPACE.out}')
+>             print(f'Проверьте корректность задания параметров.')
+>             print(f'Не добавляйте в конце параметра обратный слеш "{FLY}\\"')
+>             sys.exit(-1)
+>     else:
+>         # Если параметр не задан
+>         NAMESPACE.out = os.getcwd()
+> ```
 
 **-nb, --no-banner**
 
@@ -173,7 +195,7 @@ URL курса
 
 
 ## Глобальные константы параметров в скрипте
-Все параметры находятся внутри срипта. Не стоит их изменять.
+Все параметры находятся внутри скрипта. Не стоит их изменять.
 
 ## Лицензия
 [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
