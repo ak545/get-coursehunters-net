@@ -3,7 +3,7 @@
 
 ## Скриншоты
 > Скрипт в работе
-![](https://github.com/ak545/monitoring-importan-emails/raw/master/images/script.png)
+![](https://github.com/ak545/get-coursehunters-net/raw/master/images/script.png)
 
 ## Описание
 Это python-скрипт для для загрузки курсов с сайта https://coursehunters.net/.
