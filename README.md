@@ -1,5 +1,5 @@
 # Get Courses from coursehunters.net from ak545
-**get.coursehunters.net.py** - Это python-скрипт для для загрузки курсов с сайта https://coursehunters.net/.
+**get.coursehunters.net.py** - Это python-скрипт для загрузки курсов с сайта https://coursehunters.net/.
 
 ## Скриншоты
 > Скрипт в работе
@@ -67,15 +67,25 @@ foo@bar:~$ python -m pip install --upgrade pip
 ### Установка зависимостей
 
 ```console
-foo@bar:~$ pip install colorama
-foo@bar:~$ pip install beautifulsoup4
+# for Linux or macOS
+foo@bar:~$ pip3 install colorama --user
+foo@bar:~$ pip3 install beautifulsoup4 --user
+
+# for Windows
+c:\py> pip install colorama
+c:\py> pip install beautifulsoup4
 ```
 
 ### Обновление зависимостей
 
 ```console
-foo@bar:~$ pip install --upgrade colorama
-foo@bar:~$ pip install --upgrade beautifulsoup4
+# for Linux or macOS
+foo@bar:~$ pip3 install --upgrade colorama --user
+foo@bar:~$ pip3 install --upgrade beautifulsoup4 --user
+
+# for Windows
+c:\py> pip install --upgrade colorama
+c:\py> pip install --upgrade beautifulsoup4
 ```
 
 В зависимости от вашего Pyton окружения, ваши действия будут немного иными, например, возможно, вам потребуется указать ключ **--user** (для **pip**) или вместо команд **python** и **pip** использовать команды **python3** и **pip3**. Если вы используете [виртуальные окружения](https://docs.python.org/3/library/venv.html), то скорее всего, все эти действия вам необходимо будет сделать после входа в соответствующее окружение.
@@ -107,30 +117,35 @@ foo@bar:~$ get.coursehunters.net.py -u "https://coursehunters.net/course/praktic
 или
 
 ```console
-foo@bar:~$ python get.coursehunters.net.py "https://coursehunters.net/course/prakticheskiy-html"
+foo@bar:~$ python get.coursehunters.net.py -u "https://coursehunters.net/course/prakticheskiy-html"
+# or
+foo@bar:~$ python3 get.coursehunters.net.py -u "https://coursehunters.net/course/prakticheskiy-html"
 ```
 
 или
 
 ```console
-foo@bar:~$ ./get.coursehunters.net.py "https://coursehunters.net/course/prakticheskiy-html" -o "~/courses"
+foo@bar:~$ ./get.coursehunters.net.py -u "https://coursehunters.net/course/prakticheskiy-html" -o "~/courses"
 ```
 
-Чтобы запускать скрипт напрямую, выполните команду:
+Чтобы запускать скрипт напрямую в Linux или Apple macOS, выполните команду:
 
 ```console
+# for Linux or macOS
 foo@bar:~$ chmod +x /home/user/py/get.coursehunters.net.py
 ```
 
 Скорректируйте в первой строке скрипта [Шебанг (Unix)](https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%B1%D0%B0%D0%BD%D0%B3_(Unix)), например:
 
 Показать путь, где расположен python:
-```console    
+```console   
+# for Linux 
 foo@bar:~$ which python
 ```
 
 или
 ```console
+# for Linux
 foo@bar:~$ which python3
 ```
 
@@ -145,14 +160,22 @@ foo@bar:~$ which python3
 
 Переименуйте скрипт:
 ```console
+# for Linux or macOS
 foo@bar:~$ mv /home/user/py/get.coursehunters.net.py /home/user/py/get.coursehunters.net
 ```
 
 Проверьте запуск скрипта:
 ```console
+# for Linux or macOS
 foo@bar:~$ /home/user/py/get.coursehunters.net -h
 foo@bar:~$ /home/user/py/./get.coursehunters.net -h
 ```
+В Microsoft Windows эти шаги можно пропустить:
+```console
+# for Windows
+c:\py> c:\py\get.coursehunters.net -h
+```
+
 
 ### Описание опций
 **-h, --help**
