@@ -7,7 +7,7 @@ from __future__ import unicode_literals
 # Author: Andrey Klimov < ak545 at mail dot ru >
 # https://github.com/ak545
 #
-# Current Version: 0.1.1
+# Current Version: 0.1.2
 # Date: 14-07-2019 (dd-mm-yyyy)
 #
 # License:
@@ -54,8 +54,14 @@ init(autoreset=True)
 
 urllib3.disable_warnings()
 
+# Check Python Version
+if sys.version_info < (3, 6):
+    print("Error. Python version 3.6 or later required to run this script")
+    print("Your version:", sys.version)
+    sys.exit(-1)
+
 # Глобальные константы
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 FR = Fore.RESET
 FLW = Fore.LIGHTWHITE_EX
@@ -668,11 +674,6 @@ def main():
 
 
 if __name__ == "__main__":
-    # Check Python Version
-    if sys.version_info < (3, 6):
-        print("Error. Python version 3.6 and above required")
-        sys.exit(-1)
-
     print(f"{SR}")
 
     # Parsing command line
